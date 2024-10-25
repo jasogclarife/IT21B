@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        canvas {
+            width: 830px !important; 
+            height: 500px !important; 
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart');
+      
+        new Chart(ctx, {
+          type: 'bar', // Changed from 'line' to 'bar'
+          data: {
+            labels: ['Gwapo', 'Pangit', 'Medyo Gwapo', 'Hapit ni Gwapo'],
+            datasets: [{
+              label: '# of Groupings',
+              data: [30, 50, 20, 40],
+              backgroundColor: ['red', 'blue', 'green', 'orange'], // Background color for each bar
+              borderWidth: 2,
+              borderColor: 'rgba(0, 0, 0, 1)', 
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+    </script>
+</body>
+</html>
